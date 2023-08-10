@@ -1,6 +1,6 @@
 use std::cmp::{max, min};
 
-fn gcd(a: i64, b: i64) -> i64 {
+pub fn gcd(a: i64, b: i64) -> i64 {
     let (mut g1, mut g2) = (max(a, b), min(a, b));
     while g2 != 0 {
         (g1, g2) = (g2, g1 % g2);
@@ -8,7 +8,7 @@ fn gcd(a: i64, b: i64) -> i64 {
     g1
 }
 
-fn lcm(a: i64, b: i64) -> i64 {
+pub fn lcm(a: i64, b: i64) -> i64 {
     a * (b / gcd(a, b))
 }
 
